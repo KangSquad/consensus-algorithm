@@ -147,7 +147,7 @@
   	)
 
   ### 2. Add hash function (SHA256, SHA512)
-  1. Move 'SHA256.cc' and 'SHA256.h' from SHA into 'ns-3-dev/src/application/model'.
+  1. Move `SHA256.cc` and `SHA256.h` from SHA into `ns-3-dev/src/application/model`.
   
   2. Change the ./ns-3-dev/src/application/CMakeLists.txt file
   
@@ -158,6 +158,11 @@
   Add the following to the `HEADER_FILES` list:
 
     model/sha256.h
+
+  3. Add `#include "SHA256.h"` to the `pow.cc` file.
+  
+    #include "SHA256.h"
+
 
   ### 3. Blockchain Simulator
   Move `blockchain-simulator.cc` from `scratch` into `ns-3-dev/scratch`
