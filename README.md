@@ -145,13 +145,13 @@
   	)
 
   ### 2. Blockchain Simulator
-  Move `block-simulator.cc` from `scratch` into `ns-3-dev/scratch`
+  Move `blockchain-simulator.cc` from `scratch` into `ns-3-dev/scratch`
     
 
   ### 3. Network Helper
   1. Move `network-helper.cc` and `network.helper.h` from `network-helper` into `ns-3-dev/src/application/helper`
 
-  2. Change the ./ns-3-dev/src/application/CMakeLists.txt file
+  2. Change the /ns-3-dev/src/application/CMakeLists.txt file
   
   Add the following to the `SOURCE_FILES` list:
 
@@ -181,7 +181,7 @@
     ./ns-3-dev/ns3 run blockchain-simulator
      
   ### 6. Change algorithm
-  if you want to change the algorithm, you should follow `Consensus Algorithm` part with file in `PQC_algorithms` you want.
+  If you want to change the algorithm, you should follow `Consensus Algorithm` part with file in `PQC_algorithms` you want.
   And return the file to its original location. 
 
   Also change the file as follow:
