@@ -19,12 +19,11 @@
 
 
 ## Environment
-- __Processor__: Intel NUC(Intel i5-8295U CPU)
+- __Processor__: Intel NUC(Intel i3-6100U CPU)
 - __RAM__: 16GB
 - __OS__: Ubuntu 20.04.6 LTS
 - __Simulator__: NS-3 (Network Simulator)
   - __Version__: ns-3.38-dirty
-- __Editor__: Visual Studio Code
 - __Language__: C++
 
 ## Installation
