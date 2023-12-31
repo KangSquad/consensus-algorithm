@@ -8,22 +8,24 @@
   - [liboqs](#liboqs)
 - [Getting Started](#getting-started)
   - [1. Add Library (liboqs, OpenSSL)](#1-add-library-liboqs-openssl)
-  - [2. Blockchain Simulator](#2-blockchain-simulator)
-  - [3. Network Helper](#3-network-helper)
-  - [4. Consensus Algorithm](#4-consensus-algorithm)
-  - [5. Run Simulator](#5-run-simulator)
-  - [6. Change Algorithm](#6-change-algorithm)
+  - [2. Add hash function (SHA256, SHA512)](#2-add-hash-function-sha256-sha512))
+  - [3. Blockchain Simulator](#3-blockchain-simulator)
+  - [4. Network Helper](#4-network-helper)
+  - [5. Consensus Algorithm](#5-consensus-algorithm)
+  - [6. Run Simulator](#6-run-simulator)
+  - [7. Change Algorithm](#7-change-algorithm)
 - [Reference](#Reference)
 - [Contributor](#Contributor)
 - [License](#License)
 
 
 ## Environment
-- __Processor__: Intel NUC(Intel i3-6100U CPU)
+- __Processor__: Intel NUC(Intel i5-8295U CPU)
 - __RAM__: 16GB
 - __OS__: Ubuntu 20.04.6 LTS
 - __Simulator__: NS-3 (Network Simulator)
   - __Version__: ns-3.38-dirty
+- __Editor__: Visual Studio Code
 - __Language__: C++
 
 ## Installation
@@ -144,14 +146,26 @@
   	  EXECUTABLE_DIRECTORY_PATH ${scratch_directory}/
   	)
 
-  ### 2. Blockchain Simulator
+  ### 2. Add hash function (SHA256, SHA512)
+  1. Move 'SHA256.cc' and 'SHA256.h' from SHA into 'ns-3-dev/src/application/model'.
+  
+  2. Change the ./ns-3-dev/src/application/CMakeLists.txt file
+  
+  Add the following to the `SOURCE_FILES` list:
+
+    model/sha256.cc
+    
+  Add the following to the `HEADER_FILES` list:
+
+    model/sha256.h
+
+  ### 3. Blockchain Simulator
   Move `blockchain-simulator.cc` from `scratch` into `ns-3-dev/scratch`
     
+  ### 4. Network Helper
+  1. Move `network-helper.cc` and `network.helper.h` from `network-helper` into `ns-3-dev/src/application/helper`.
 
-  ### 3. Network Helper
-  1. Move `network-helper.cc` and `network.helper.h` from `network-helper` into `ns-3-dev/src/application/helper`
-
-  2. Change the /ns-3-dev/src/application/CMakeLists.txt file
+  2. Change the ./ns-3-dev/src/application/CMakeLists.txt file
   
   Add the following to the `SOURCE_FILES` list:
 
@@ -161,8 +175,8 @@
 
     helper/network-helper.h
         
-  ### 4. Consensus Algorithm
-  1. Move `pow.cc` and `pow.h`(or you want) from `PQC_algorithms/PoW` into `ns-3-dev/src/application/model`
+  ### 5. Consensus Algorithm
+  1. Move `pow.cc` and `pow.h`(or you want) from `PQC_algorithms/PoW` into `ns-3-dev/src/application/model`.
 
   2. Change the ./ns-3-dev/src/application/CMakeLists.txt file
      
@@ -174,19 +188,19 @@
 
     model/pow.h
   
-  ### 5. Run Simulator
+  ### 6. Run Simulator
     ./ns-3-dev/ns3 clean
     ./ns-3-dev/ns3 configure
     ./ns-3-dev/ns3 build
     ./ns-3-dev/ns3 run blockchain-simulator
      
-  ### 6. Change algorithm
-  If you want to change the algorithm, you should follow `Consensus Algorithm` part with file in `PQC_algorithms` you want.
+  ### 7. Change algorithm
+  if you want to change the algorithm, you should follow `Consensus Algorithm` part with file in `PQC_algorithms` you want.
   And return the file to its original location. 
 
   Also change the file as follow:
   1. blockchain-simulator.cc
-  2. Network-helper.cc
+  2. network-helper.cc
      
   What need to change in 1, 2 is indicated in the file.
   
@@ -196,7 +210,16 @@
   ### [Blockchain Simulator & Network Helper](https://github.com/zhayujie/blockchain-simulator)
   ### [OpenSSL](https://askubuntu.com/questions/1462945/make-j-failing-for-oqs-openssl)
   ### [liboqs](https://github.com/open-quantum-safe/liboqs)
+  ### [NS-3](https://www.nsnam.org/)
+  ### [PoW(Proof-of-Work)](https://bitcoin.org/bitcoin.pdf)
+  ### [PoS(Proof-of-Stake)](https://cryptodeep.ru/doc/paper.pdf)
+  ### [PoL(Proof-of-Luck)](https://dl.acm.org/doi/pdf/10.1145/3007788.3007790)
+  ### [PoET(Proof-of-Elapsed Time)](https://www.researchgate.net/profile/Lin-Chen-96/publication/320246838_On_Security_Analysis_of_Proof-of-Elapsed-Time_PoET/links/5cd74989299bf14d958df857/On-Security-Analysis-of-Proof-of-Elapsed-Time-PoET.pdf)
+  ### [PQ-DPoL(Post-Quantum Delegated Proof-of-Luck)]()
+  ### [PQ-DPoL Benchmark](https://kiss.kstudy.com/Detail/Ar?key=4059251)
+  ### [SHA256](https://github.com/System-Glitch/SHA256)
+  ### [SHA512](https://github.com/pr0f3ss/SHA)
 
-## Contributor
+## Collaborator
+  ### [KangSquad](https://github.com/KangSquad)
 ## License
-
