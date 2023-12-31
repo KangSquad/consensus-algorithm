@@ -226,5 +226,5 @@
   ### [SHA512](https://github.com/pr0f3ss/SHA)
 
 ## Collaborator
-  ### [KangSquad](https://github.com/KangSquad)
+  ### [WOONG](https://github.com/dnjsdnde)
 ## License
