@@ -17,7 +17,7 @@
 #include "pow.h"
 #include "stdlib.h"
 #include "ns3/ipv4.h"
-#include "SHA.h"
+#include "SHA256.h"
 #include <ctime>
 #include <random>
 #include <map>
@@ -99,9 +99,9 @@ namespace ns3 {
     // =============== Get Hash Value =============== //
     string Network::GetHash (string input)
     {
-        SHA256_origin sha;
+        SHA sha;
         sha.update (input);
-        string output = SHA256_origin::toString (sha.digest ());
+        string output = SHA::toString (sha.digest ());
     
         return output;
     }
